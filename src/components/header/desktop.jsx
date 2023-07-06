@@ -1,27 +1,20 @@
 import React from "react";
-import { Layout, Input, Button } from "antd";
-import { ShoppingCartOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
-import { styled } from "styled-components";
+import { Input, Button } from "antd";
+import { ShoppingCartOutlined } from "@ant-design/icons";
 
-export const Header = () => {
-  const { Header } = Layout;
-  const { Search } = Input;
+import { HeaderContainer } from "./desktop-styles";
 
-  const headerStyle = {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    backgroundColor: "#fff",
-  };
+const { Search } = Input;
 
+export const DesktopMode = () => {
   const onSearch = (value) => console.log(value);
 
   return (
-    <Header style={headerStyle}>
-      <Container gutter={16}>
+    <HeaderContainer>
+      <div className="container">
         <Link
+          className="logo"
           to="/"
           style={{
             display: "flex",
@@ -36,9 +29,9 @@ export const Header = () => {
         <Button type="text">
           <Link to="/Majid">Home</Link>
         </Button>
-      </Container>
+      </div>
 
-      <Container>
+      <div className="container">
         <Button icon={<ShoppingCartOutlined />} style={{ marginRight: 16 }}>
           Cart (0)
         </Button>
@@ -48,13 +41,7 @@ export const Header = () => {
           onSearch={onSearch}
           style={{ width: 200, marginRight: 0 }}
         />
-      </Container>
-    </Header>
+      </div>
+    </HeaderContainer>
   );
 };
-
-const Container = styled.div`
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-`;
