@@ -22,3 +22,5 @@ I'll share what I've learned about front end and ReactJS in this repository.
 - Next JS
 - Ant Design
 - Zustand
+- Cypress
+- Jest
