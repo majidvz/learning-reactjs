@@ -1,9 +1,5 @@
 # Hi There 👋
-<br>
-<div>
-  <img src="https://i.giphy.com/media/Vbtc9VG51NtzT1Qnv1/giphy.webp" />
-</div>
-<br>
+![](https://i.giphy.com/media/Vbtc9VG51NtzT1Qnv1/giphy.webp)
 <p>
   I'm Majid and starting to learn ReactJS again.
 </p>
