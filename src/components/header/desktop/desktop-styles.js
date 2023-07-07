@@ -5,7 +5,7 @@ const { Header } = Layout;
 
 const { Search } = Input;
 export const HeaderContainer = styled(Header)`
-  padding: 0 64px;
+  padding: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
