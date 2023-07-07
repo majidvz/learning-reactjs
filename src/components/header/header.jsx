@@ -4,12 +4,16 @@ import { DesktopMode } from "./desktop";
 import { PhoneMode } from "./phone";
 
 export const Header = () => {
-  const [isDesktop, setIsDesktop] = useState();
+  const desktopBreakPoint = 992;
+  const screenWidth = window.screen.width;
+  const [isDesktop, setIsDesktop] = useState(
+    screenWidth >= desktopBreakPoint ? true : false
+  );
 
   useEffect(() => {
     const changeScreenWidthHandler = () => {
       const screenWidth = window.screen.width;
-      const isDesktop = screenWidth >= 992 ? true : false;
+      const isDesktop = screenWidth >= desktopBreakPoint ? true : false;
 
       isDesktop ? setIsDesktop(true) : setIsDesktop(false);
     };

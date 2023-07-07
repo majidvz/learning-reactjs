@@ -1,11 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Input, Button } from "antd";
+import { Button } from "antd";
 import { ShoppingCartOutlined } from "@ant-design/icons";
 
-import { HeaderContainer } from "./desktop-styles";
-
-const { Search } = Input;
+import { HeaderContainer, SearchContainer } from "./desktop-styles";
 
 export const DesktopMode = () => {
   const onSearch = (value) => console.log(value);
@@ -27,20 +25,17 @@ export const DesktopMode = () => {
         </Link>
 
         <Button type="text">
-          <Link to="/Majid">Home</Link>
+          <Link to="/">Home</Link>
         </Button>
       </div>
 
       <div className="container">
-        <Button icon={<ShoppingCartOutlined />} style={{ marginRight: 16 }}>
-          Cart (0)
-        </Button>
-        <Search
+        <Button icon={<ShoppingCartOutlined />}>Cart (0)</Button>
+        <SearchContainer
           placeholder="input search text"
           allowClear
           onSearch={onSearch}
-          style={{ width: 200, marginRight: 0 }}
-        />
+        ></SearchContainer>
       </div>
     </HeaderContainer>
   );

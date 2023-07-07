@@ -4,7 +4,7 @@ import { styled } from "styled-components";
 const { Header } = Layout;
 
 export const HeaderContainer = styled(Header)`
-  padding: 0 64px;
+  padding: 0 32px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -13,6 +13,13 @@ export const HeaderContainer = styled(Header)`
   .container {
     display: flex;
     justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
     align-items: center;
   }
 `;
