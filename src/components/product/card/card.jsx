@@ -7,7 +7,7 @@ const { Meta } = Card;
 
 export const ProductCard = ({ product }) => {
   return (
-    <Link>
+    <Link to={`/detail/${product.id}`}>
       <Card
         hoverable
         cover={

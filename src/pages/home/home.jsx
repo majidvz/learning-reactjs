@@ -1,14 +1,20 @@
 import { useEffect, useState } from "react";
 import { Row } from "antd";
 
-import { Container } from "./home-styles";
+import { ListSkeleton, ProductList, productService } from "../../components";
 
-import { ProductList, productService } from "../../components";
+import { Container } from "./home-styles";
 
 export const Home = () => {
   const [products, setProducts] = useState();
+
   useEffect(() => {
-    productService.getAllProducts().then(({ data }) => setProducts(data));
+    productService
+      .getAllProducts()
+      .then(({ data }) => setProducts(data))
+      .catch(() => {
+        setProducts([]);
+      });
   }, []);
 
   if (products) {
@@ -20,6 +26,12 @@ export const Home = () => {
       </Container>
     );
   } else {
-    return <h1>Loading...</h1>;
+    return (
+      <Container>
+        <Row gutter={[16, 16]}>
+          <ListSkeleton />
+        </Row>
+      </Container>
+    );
   }
 };
